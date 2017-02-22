@@ -12,7 +12,7 @@ return [
             'orm_default' => [
                 'class' => \Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain::class,
                 'drivers' => [
-                    'My\Entity' => 'my_entity',
+                    'App\Entity' => 'my_entity',
                 ],
             ],
             'my_entity' => [

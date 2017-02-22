@@ -11,7 +11,7 @@ use Zend\Expressive\Template;
 use Doctrine\ORM\EntityManager;
 use App\Entity\News;
 
-class ListAction
+class DeleteAction
 {
     private $router;
 
@@ -26,12 +26,10 @@ class ListAction
 
     public function __invoke(ServerRequestInterface $request, ResponseInterface $response, callable $next = null)
     {
-
         $data = [];
         $data['title'] = "News";
-        //var_dump($this->entityManager->find(News::class, 1));exit;
-        //var_dump($this->entityManager->getRepository(News::class));
         $data['news'] = $this->entityManager->getRepository(News::class)->findAll();
+
 
         return new HtmlResponse($this->template->render('app::news', $data));
     }

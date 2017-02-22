@@ -8,7 +8,12 @@ return [
         ],
         'factories' => [
             App\Action\HomePageAction::class => App\Action\HomePageFactory::class,
-            App\Action\NewsAction::class => App\Action\NewsFactory::class,
+
+            App\Action\News\ListAction::class => App\Action\News\ListFactory::class,
+            App\Action\News\AddAction::class => App\Action\News\AddFactory::class,
+            App\Action\News\EditAction::class => App\Action\News\EditFactory::class,
+            App\Action\News\DeleteAction::class => App\Action\News\DeleteFactory::class,
+
         ],
     ],
 
@@ -31,7 +36,7 @@ return [
             'middleware' => App\Action\News\ListAction::class,
             'allowed_methods' => ['GET'],
         ],
-        [
+        /*[
             'name' => 'news.add',
             'path' => '/news/add',
             'middleware' => App\Action\News\AddAction::class,
@@ -48,6 +53,6 @@ return [
             'path' => '/news/delete',
             'middleware' => App\Action\News\DeleteAction::class,
             'allowed_methods' => ['DELETE'],
-        ],
+        ],*/
     ],
 ];

@@ -6,7 +6,7 @@ use Interop\Container\ContainerInterface;
 use Zend\Expressive\Router\RouterInterface;
 use Zend\Expressive\Template\TemplateRendererInterface;
 
-class ListFactory
+class EditFactory
 {
     public function __invoke(ContainerInterface $container)
     {
@@ -16,6 +16,6 @@ class ListFactory
             : null;
         $em = $container->get('doctrine.entity_manager.orm_default');
 
-        return new ListAction($router, $template, $em);
+        return new EditAction($router, $template, $em);
     }
 }
