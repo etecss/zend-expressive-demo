@@ -1,0 +1,26 @@
+<h1><?= $this->title ?></h1>
+<form action="" method="post">
+    <input type="text" name="name">
+    <button type="submit">Add</button>
+</form>
+<?php
+if (!is_null($this->news)) { ?>
+    <table>
+        <tr>
+            <th>Title</th>
+            <th></th>
+        </tr>
+        <?php
+        foreach ($this->news as $news) { ?>
+            <tr>
+                <td><?= $news->name ?></td>
+                <td>
+                    <form action="" method="delete">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        <?php } ?>
+    </table>
+    <?php
+} ?>
