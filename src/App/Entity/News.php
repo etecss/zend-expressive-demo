@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use App\Validation\NewsValidator;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\NewsRepository")
@@ -19,25 +20,34 @@ class News
     private $id;
 
     /**
-     * @ORM\Column(name="name", type="string", length=32)
+     * @ORM\Column(name="title", type="string", length=32)
      * @var string
      */
-    private $name;
+    private $title;
+
+    /**
+     * @ORM\Column(name="content", type="text")
+     * @var string
+     */
+    private $content;
 
     /**
      * Application constructor.
      * @param $name
      */
-    public function __construct($name)
+    public function __construct($title, $content)
     {
-        $this->name = $name;
+        $this->validator = new NewsValidator();
+        $this->title = $title;
+        $this->content = $content;
     }
 
     public function jsonSerialize()
     {
         return [
             'id' => $this->id,
-            'name' => $this->name
+            'title' => $this->title,
+            'content' => $this->content
         ];
     }
 

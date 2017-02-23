@@ -1,0 +1,39 @@
+<form name="<?= $newsForm->getName() ?>"
+      method="<?= $newsForm->getAttributes()['method'] ?>"
+      action="<?= $newsForm->getAttributes()['action'] ?>">
+    <div class="form-group">
+        <input type="<?= $newsForm->get('id')->getAttributes()['type'] ?>"
+               name="<?= $newsForm->get('id')->getName() ?>"
+               value="<?= $newsForm->get('id')->getValue() ?>">
+    </div>
+    <div class="form-group">
+        <label class="sr-only"
+               for="<?= $newsForm->get('title')->getName() ?>">
+            <?= $newsForm->get('title')->getLabel() ?></label>
+        <input class="form-control"
+               placeholder="<?= $newsForm->get('title')->getAttributes()['placeholder'] ?>"
+               type="<?= $newsForm->get('title')->getAttributes()['type'] ?>"
+               name="<?= $newsForm->get('title')->getName() ?>"
+               value="<?= $newsForm->get('title')->getValue() ?>">
+        <?php
+        /*echo '<pre>';
+        var_dump($this);
+        echo '</pre>';
+        exit;*/
+        echo $this->partial('partial::input-errors', ['inputErrors' => $newsForm->get('title')->getMessages()]) ?>
+    </div>
+    <div class="form-group">
+        <label class="sr-only"
+               for="<?= $newsForm->get('content')->getName() ?>">
+            <?= $newsForm->get('content')->getLabel() ?></label>
+        <input class="form-control"
+               placeholder="<?= $newsForm->get('content')->getAttributes()['placeholder'] ?>"
+               type="<?= $newsForm->get('content')->getAttributes()['type'] ?>"
+               name="<?= $newsForm->get('content')->getName() ?>"
+               value="<?= $newsForm->get('content')->getValue() ?>">
+        <?php //echo $this->fetch('partial::input-errors', ['inputErrors' => $newsForm->get('content')->getMessages()]) ?>
+    </div>
+    <button class="btn btn-primary-outline" type="<?= $newsForm->get('submit')->getAttributes()['type'] ?>">
+        <?= $newsForm->get('submit')->getValue() ?>
+    </button>
+</form>

@@ -1,8 +1,5 @@
 <h1><?= $this->title ?></h1>
-<form action="" method="post">
-    <input type="text" name="name">
-    <button type="submit">Add</button>
-</form>
+<a href="/news/add">Create news</a>
 <?php
 if (!is_null($this->news)) { ?>
     <table>
@@ -13,7 +10,7 @@ if (!is_null($this->news)) { ?>
         <?php
         foreach ($this->news as $news) { ?>
             <tr>
-                <td><?= $news->name ?></td>
+                <td><?= $news->title ?></td>
                 <td>
                     <form action="" method="delete">
                         <button type="submit">Delete</button>

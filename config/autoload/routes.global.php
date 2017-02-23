@@ -36,23 +36,23 @@ return [
             'middleware' => App\Action\News\ListAction::class,
             'allowed_methods' => ['GET'],
         ],
-        /*[
-            'name' => 'news.add',
+        [
+            'name' => 'news-add',
             'path' => '/news/add',
             'middleware' => App\Action\News\AddAction::class,
             'allowed_methods' => ['GET', 'POST'],
         ],
         [
-            'name' => 'news.edit',
+            'name' => 'news-edit',
             'path' => '/news/edit',
             'middleware' => App\Action\News\EditAction::class,
             'allowed_methods' => ['GET', 'PUT'],
         ],
         [
-            'name' => 'news.delete',
+            'name' => 'news-delete',
             'path' => '/news/delete',
             'middleware' => App\Action\News\DeleteAction::class,
             'allowed_methods' => ['DELETE'],
-        ],*/
+        ],
     ],
 ];
